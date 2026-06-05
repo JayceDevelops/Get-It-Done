@@ -1,1 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500&display=swap');
 
+:root {
+  /* Background & Borders */
+  --bg-main: #121824;
+  --bg-sidebar: #1E2638;
+  --bg-surface: #263147;
+  --color-border: #32405D;
+
+  /* Accents */
+  --accent-primary: #2A7CEE;
+  --accent-secondary: #F28729;
+
+  /* Typography */
+  --text-primary: #FFFFFF;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+
+  /* Urgency Levels */ 
+  --urgent: rgb(252, 100, 73);
+  --slight-urgent: rgb(244, 244, 133);
+  --not-urgent: rgb(53, 140, 53);
+  
+
+  /* Fonts */
+  --font-header: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    display: grid;
+    grid-template-columns: 20% auto;
+}
+
+nav {
+    background-color: var(--bg-sidebar);
+
+    height: 100vh;
+
+    display: grid;
+    grid-template-rows: min-content min-content min-content auto;
+    
+
+    padding-left: 1rem;
+}
+
+nav > .heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+    gap: 1rem;
+
+    padding-top: 1.5rem;
+}
+
+nav > .heading > h1 {
+    font-family: var(--font-header);
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    letter-spacing: -0.02em;
+}
+
+nav > .new {
+    width: 93%;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: clamp(0.5rem, 4vw, 1rem);
+    color: var(--text-primary);
+
+    padding: 0.5rem;
+    margin-top: 2rem;
+
+    border-radius: 8px;
+    border: none;
+    outline: none;
+
+    background-color: var(--accent-primary);
+}
+
+nav > .preset > h1 {
+    font-family: var(--font-body);
+    font-size: clamp(0.75rem, 4vw, 1rem);
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+nav > .preset > .presetButton {
+    width: 93%;
+    display: grid;
+    grid-template-columns: auto min-content;
+    
+
+    border-radius: 8px;
+}
+
+nav > .preset > .presetButton > .presetname {
+    display: flex;
+    flex-direction: row;
+}
+
+
+nav > .preset > .presetButton > h1 {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 4vw, 1.25rem);
+    padding-left: 1rem;
+}
