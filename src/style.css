@@ -87,14 +87,16 @@ nav > .new {
     background-color: var(--accent-primary);
 }
 
-nav > .preset > h1 {
+
+
+.list {
+
     font-family: var(--font-body);
     font-size: clamp(0.75rem, 4vw, 1rem);
     font-weight: 400;
     letter-spacing: 1px;
     color: var(--text-secondary);
-    padding-top: 1.5rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
 }
 
 nav > .preset > .presetButton {
@@ -104,16 +106,80 @@ nav > .preset > .presetButton {
     
 
     border-radius: 8px;
+    cursor: pointer;
+
+    margin-bottom: 0.5rem;
 }
 
 nav > .preset > .presetButton > .presetname {
     display: flex;
     flex-direction: row;
+    align-items: center;
+
+    font-family: var(--font-body);
+    font-size: clamp(0.5rem, 4vw, 0.65rem);
+    color: var(--text-primary);
+    
 }
 
+nav > .preset > .current {
+    background-color: var(--text-muted);
+}
 
-nav > .preset > .presetButton > h1 {
+nav > .preset > .current > .active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav > .preset > .current > .active > h1 {
+
+    background-color: var(--color-border);
+
     font-family: var(--font-body);
-    font-size: clamp(1rem, 4vw, 1.25rem);
-    padding-left: 1rem;
+    font-size: clamp(0.5rem, 4vw, 0.75rem);
+    font-weight: 500;
+
+    color: var(--text-primary);
+
+    margin-right: 1rem;
+    padding: 0.15rem 0.5rem 0.15rem 0.5rem;
+
+    border-radius: 50px;
+}
+
+nav > .custom > .customHeader {
+    display: grid;
+    grid-template-columns: min-content auto;
+}
+
+nav > .custom > div > div {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+nav > .custom > div > div > button {
+    margin-right: 1.75rem;
+
+    border-radius: 100%;
+    border: none;
+    outline: none;
+
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+
+    width: 1.5rem;
+    height: 1.5rem;
+
+    cursor: pointer;
+}
+
+.preset, .custom {
+    margin-top: 2.5rem;
+}
+
+img {
+    width: 45px;
+    height: 45px; 
 }

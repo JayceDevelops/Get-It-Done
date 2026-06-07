@@ -1,0 +1,112 @@
+import Logo from '../assets/Logo.svg';
+import Today from '../assets/Today.svg'
+import Upcoming from '../assets/Upcoming.svg';
+import Anytime from '../assets/Anytime.svg';
+import Someday from '../assets/Someday.svg';
+
+export const InitSidebar = () => {
+    const nav = document.querySelector('nav');
+
+    renderHeading(nav);
+
+    // Render New Task Button
+    const newTask = document.createElement('button');
+    newTask.classList.add('new');
+    newTask.textContent = '+ New Task';
+    nav.appendChild(newTask);
+
+    // Render Preset Categories
+    renderPresetCategories(nav);
+
+    // Render Custom Categories
+    renderCustomCategories(nav);
+};
+
+const renderHeading = (nav) => {
+    // Render Heading Div
+    const heading = document.createElement('div');
+    heading.classList.add('heading');
+    
+    // Render Image 
+    const Icon = document.createElement('img');
+    Icon.src = Logo;
+    heading.appendChild(Icon);
+
+    // Render Text
+    heading.innerHTML += '<h1>Get It Done</h1>';
+
+    nav.appendChild(heading);
+};
+
+const renderPresetCategories = (nav) => {
+    const preset = document.createElement('div');
+    preset.classList.add('preset');
+    preset.innerHTML += '<h1 class="list">Preset</h1>';
+
+    // Goes through array of preset categories and creates the necessary divs and elements
+    const PresetCategories = ['Today', 'Upcoming', 'Anytime', 'Someday'];
+    PresetCategories.forEach((categorie) => {
+        const presetButton = document.createElement('div');
+        presetButton.classList.add('presetButton', categorie);
+
+        const name = document.createElement('div');
+        name.classList.add('presetname');
+
+        const buttonImage = document.createElement('img');
+        const nameText = document.createElement('h1');
+        nameText.textContent = categorie;
+        name.appendChild(nameText);
+
+        presetButton.appendChild(name);
+
+        if (categorie === 'Today'){
+            buttonImage.src = Today;
+            presetButton.classList.add('current');
+
+            const active = document.createElement('div');
+            active.classList.add('active');
+            active.innerHTML = '<h1>Current</h1>';
+
+            presetButton.appendChild(active);
+        }
+        else if (categorie === 'Upcoming'){
+            buttonImage.src = Upcoming;
+        }
+        else if (categorie === 'Anytime'){
+            buttonImage.src = Anytime;
+        }
+        else {
+            buttonImage.src = Someday;
+        }
+
+        name.insertBefore(buttonImage, nameText);
+
+        preset.appendChild(presetButton);
+    });
+    nav.appendChild(preset);
+}
+
+const renderCustomCategories = (nav) => {
+    const custom = document.createElement('div');
+    custom.classList.add('custom');
+
+    const customHeader = document.createElement('div');
+    customHeader.classList.add('customHeader');
+
+    const headerText = document.createElement('h1');
+    headerText.classList.add('list');
+    headerText.textContent = 'Custom';
+    customHeader.appendChild(headerText);
+
+    const styleDiv = document.createElement('div');
+
+    const newCustButton = document.createElement('button');
+    newCustButton.classList.add('newCustom');
+    newCustButton.textContent = "+";
+
+    styleDiv.appendChild(newCustButton);
+
+    customHeader.appendChild(styleDiv);
+    custom.appendChild(customHeader);
+    nav.appendChild(custom);
+};
