@@ -45,21 +45,21 @@ const renderPresetCategories = (nav) => {
 
     // Goes through array of preset categories and creates the necessary divs and elements
     const PresetCategories = ['Today', 'Upcoming', 'Anytime', 'Someday'];
-    PresetCategories.forEach((categorie) => {
+    PresetCategories.forEach((category) => {
         const presetButton = document.createElement('div');
-        presetButton.classList.add('presetButton', categorie);
+        presetButton.classList.add('presetButton', category);
 
         const name = document.createElement('div');
         name.classList.add('presetname');
 
         const buttonImage = document.createElement('img');
         const nameText = document.createElement('h1');
-        nameText.textContent = categorie;
+        nameText.textContent = category;
         name.appendChild(nameText);
 
         presetButton.appendChild(name);
 
-        if (categorie === 'Today'){
+        if (category === 'Today'){
             buttonImage.src = Today;
             presetButton.classList.add('current');
 
@@ -69,10 +69,10 @@ const renderPresetCategories = (nav) => {
 
             presetButton.appendChild(active);
         }
-        else if (categorie === 'Upcoming'){
+        else if (category === 'Upcoming'){
             buttonImage.src = Upcoming;
         }
-        else if (categorie === 'Anytime'){
+        else if (category === 'Anytime'){
             buttonImage.src = Anytime;
         }
         else {

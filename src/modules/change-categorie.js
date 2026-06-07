@@ -1,4 +1,0 @@
-
-export const ChangeCategorie = (categorie) => {
-
-};

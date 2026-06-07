@@ -1,6 +1,6 @@
 import "./style.css";
 import { InitSidebar } from "./modules/init-sidebar";
-import { ChangeCategorie } from "./modules/change-categorie";
+import { ChangeCategory } from "./modules/change-category";
 
 
 InitSidebar();
@@ -8,20 +8,21 @@ InitSidebar();
 
 const Today = document.querySelector('.Today');
 Today.addEventListener("click", () => {
-    ChangeCategorie('Today');
+    ChangeCategory('Today');
 });
 
 const Upcoming = document.querySelector('.Upcoming');
 Upcoming.addEventListener("click", () => {
-    ChangeCategorie('Upcoming');
+    ChangeCategory('Upcoming');
 });
 
 const Anytime = document.querySelector('.Anytime');
 Anytime.addEventListener("click", () => {
-    ChangeCategorie('Anytime');
+    ChangeCategory('Anytime');
 });
 
 const Someday = document.querySelector('.Someday');
 Someday.addEventListener("click", () => {
-    ChangeCategorie('Someday');
+    ChangeCategory('Someday');
 });
+
