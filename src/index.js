@@ -1,10 +1,9 @@
-import "./style.css";
+import "./styling/main.css";
 import { InitSidebar } from "./modules/init-sidebar";
 import { ChangeCategory } from "./modules/change-category";
-
+import { AddCustomCategory } from "./modules/add-custom-category";
 
 InitSidebar();
-
 
 const Today = document.querySelector('.Today');
 Today.addEventListener("click", () => {
@@ -26,3 +25,7 @@ Someday.addEventListener("click", () => {
     ChangeCategory('Someday');
 });
 
+const newCustom = document.querySelector('.newCustom');
+newCustom.addEventListener("click", () => {
+    AddCustomCategory();
+});
