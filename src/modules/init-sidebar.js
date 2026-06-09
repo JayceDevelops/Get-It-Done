@@ -47,10 +47,10 @@ const renderPresetCategories = (nav) => {
     const PresetCategories = ['Today', 'Upcoming', 'Anytime', 'Someday'];
     PresetCategories.forEach((category) => {
         const presetButton = document.createElement('div');
-        presetButton.classList.add('presetButton', category);
+        presetButton.classList.add('categoryButton', category);
 
         const name = document.createElement('div');
-        name.classList.add('presetname');
+        name.classList.add('categoryname');
 
         const buttonImage = document.createElement('img');
         const nameText = document.createElement('h1');
