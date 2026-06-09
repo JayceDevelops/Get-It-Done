@@ -129,17 +129,17 @@ nav > .new {
 }
 
 
-nav > .preset > .current {
+.current {
     background-color: var(--text-muted);
 }
 
-nav > .preset > .current > .active {
+.active {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-nav > .preset > .current > .active > h1 {
+.active > h1 {
 
     background-color: var(--color-border);
 
@@ -272,6 +272,7 @@ img {
 .custom > .categoryButton {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    padding-top: 0.25rem;
+    justify-content: space-between;
+    margin-top: 0.25rem;
+    padding: 0.25rem;
 }
