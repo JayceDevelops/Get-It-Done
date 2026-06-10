@@ -1,4 +1,11 @@
 import { loadCustomCategories } from "./load-custom-category";
+import  HomeIcon from "../assets/home.svg";
+import WorkIcon from "../assets/work.svg";
+import WeightsIcon from "../assets/weights.svg";
+import VacationIcon from "../assets/vacation.svg";
+import { InitSidebar } from "./init-sidebar";
+
+let selectedIcon = HomeIcon;
 
 export const AddCustomCategory  = () => {
     renderModal();
@@ -29,6 +36,53 @@ const renderModal = () => {
     inputDiv.appendChild(input);
 
     modal.appendChild(inputDiv);
+
+    // Icon Chooser
+    const iconDiv = document.createElement('div');
+    iconDiv.classList.add('IconDiv');
+
+    const iconHeading = document.createElement('h2');
+    iconHeading.textContent = 'Choose An Icon';
+    iconDiv.appendChild(iconHeading);
+
+    const home = document.createElement('img');
+    home.classList.add('home', 'icon');
+    home.src = HomeIcon;
+    iconDiv.appendChild(home)
+
+    home.addEventListener("click", () => {
+        selectedIcon = HomeIcon;
+    });
+
+    const work = document.createElement('img');
+    work.classList.add('work', 'icon');
+    work.src = WorkIcon;
+    iconDiv.appendChild(work);
+
+    work.addEventListener("click", () => {
+        selectedIcon = WorkIcon;
+    });
+
+    const weights = document.createElement('img');
+    weights.classList.add('weights', 'icon');
+    weights.src = WeightsIcon;
+    iconDiv.appendChild(weights);
+
+    weights.addEventListener("click", () => {
+        selectedIcon = WeightsIcon;
+    });
+
+    const vacation = document.createElement('img');
+    vacation.classList.add('vacation', 'icon');
+    vacation.src = VacationIcon;
+    iconDiv.appendChild(vacation);
+
+    vacation.addEventListener("click", () => {
+        selectedIcon = VacationIcon;
+    });
+    
+
+    modal.appendChild(iconDiv);
     
     // Cancel and Add Button
     const buttonDiv = document.createElement('div');
@@ -81,7 +135,9 @@ const createAddEvent = (container, modal, add) => {
 
         const input = document.querySelector('#category').value;
         const category = {
+            id: crypto.randomUUID(),
             name: input,
+            image: selectedIcon,
             task: []
         };
 
@@ -90,8 +146,8 @@ const createAddEvent = (container, modal, add) => {
         CustomCategories = JSON.stringify(CustomCategories);
         localStorage.setItem('Custom', CustomCategories);
 
-        loadCustomCategories();
+        InitSidebar();
 
         modal.remove();
     });
-}; 
+};

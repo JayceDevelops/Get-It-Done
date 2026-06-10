@@ -3,10 +3,14 @@ import Today from '../assets/Today.svg'
 import Upcoming from '../assets/Upcoming.svg';
 import Anytime from '../assets/Anytime.svg';
 import Someday from '../assets/Someday.svg';
+import { loadCustomCategories } from './load-custom-category';
+import { ChangeCategory } from "../modules/change-category";
+import { AddCustomCategory } from "../modules/add-custom-category";
+
 
 export const InitSidebar = () => {
     const nav = document.querySelector('nav');
-
+    nav.innerHTML = '';
     renderHeading(nav);
 
     // Render New Task Button
@@ -20,6 +24,33 @@ export const InitSidebar = () => {
 
     // Render Custom Categories
     renderCustomCategories(nav);
+
+    const Today = document.querySelector('.Today');
+    Today.addEventListener("click", () => {
+        ChangeCategory('Today');
+    });
+
+    const Upcoming = document.querySelector('.Upcoming');
+    Upcoming.addEventListener("click", () => {
+        ChangeCategory('Upcoming');
+    });
+
+    const Anytime = document.querySelector('.Anytime');
+    Anytime.addEventListener("click", () => {
+        ChangeCategory('Anytime');
+    });
+
+    const Someday = document.querySelector('.Someday');
+    Someday.addEventListener("click", () => {
+        ChangeCategory('Someday');
+    });
+
+    const newCustom = document.querySelector('.newCustom');
+    newCustom.addEventListener("click", () => {
+        AddCustomCategory();
+    });
+
+    
 };
 
 const renderHeading = (nav) => {
@@ -109,4 +140,6 @@ const renderCustomCategories = (nav) => {
     customHeader.appendChild(styleDiv);
     custom.appendChild(customHeader);
     nav.appendChild(custom);
+
+    loadCustomCategories();
 };

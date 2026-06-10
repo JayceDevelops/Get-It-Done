@@ -1,34 +1,8 @@
 import "./styling/main.css";
 import { InitSidebar } from "./modules/init-sidebar";
-import { ChangeCategory } from "./modules/change-category";
-import { AddCustomCategory } from "./modules/add-custom-category";
-import { loadCustomCategories } from "./modules/load-custom-category";
+
 
 InitSidebar();
-loadCustomCategories();
 
-const Today = document.querySelector('.Today');
-Today.addEventListener("click", () => {
-    ChangeCategory('Today');
-});
 
-const Upcoming = document.querySelector('.Upcoming');
-Upcoming.addEventListener("click", () => {
-    ChangeCategory('Upcoming');
-});
-
-const Anytime = document.querySelector('.Anytime');
-Anytime.addEventListener("click", () => {
-    ChangeCategory('Anytime');
-});
-
-const Someday = document.querySelector('.Someday');
-Someday.addEventListener("click", () => {
-    ChangeCategory('Someday');
-});
-
-const newCustom = document.querySelector('.newCustom');
-newCustom.addEventListener("click", () => {
-    AddCustomCategory();
-});
 

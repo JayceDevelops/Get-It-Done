@@ -24,7 +24,13 @@ export const loadCustomCategories = () => {
             const name = document.createElement('div');
             name.classList.add('categoryname');
 
-            name.innerHTML = `<h1>${category.name}</h1>`;
+            const image = category.image;
+            const imageTag = document.createElement('img');
+            imageTag.src = image;
+
+            name.appendChild(imageTag);
+
+            name.innerHTML += `<h1>${category.name}</h1>`;
             buttonDiv.appendChild(name);
 
             buttonDiv.addEventListener("click", () => {

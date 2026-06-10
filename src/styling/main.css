@@ -129,17 +129,17 @@ nav > .new {
 }
 
 
-nav > .preset > .current {
+.current {
     background-color: var(--text-muted);
 }
 
-nav > .preset > .current > .active {
+.active {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-nav > .preset > .current > .active > h1 {
+.active > h1 {
 
     background-color: var(--color-border);
 
@@ -160,13 +160,13 @@ nav > .custom > .customHeader {
     grid-template-columns: min-content auto;
 }
 
-nav > .custom > div > div {
+nav > .custom > .customHeader > div {
     display: flex;
     align-items: center;
     justify-content: end;
 }
 
-nav > .custom > div > div > button {
+nav > .custom > .customHeader > div > button {
     margin-right: 1.75rem;
 
     border-radius: 100%;
@@ -181,6 +181,12 @@ nav > .custom > div > div > button {
 
     cursor: pointer;
 }
+
+nav > .custom > .categoryButton {
+    padding: 0.25rem;
+    margin-top: 0.35rem;
+}
+
 
 .preset, .custom {
     margin-top: 2.5rem;
@@ -208,7 +214,7 @@ img {
                 0 16px 32px rgba(0, 0, 0, 0.06);
 
     display: grid;
-    grid-template-rows: min-content min-content auto;
+    grid-template-rows: min-content min-content min-content auto;
 
 }
 
@@ -244,8 +250,24 @@ img {
     color: var(--text-primary);
 }
 
-.modal > .modalbuttons {
+.modal > .IconDiv {
     padding-top: 2rem;
+}
+
+.modal > .IconDiv > .icon {
+    border-radius: 10px;
+    padding: 0.15rem;
+    border: 2px solid var(--color-border);
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+.modal > .IconDiv > .home {
+    margin-left: 0 !important;
+}
+
+.modal > .modalbuttons {
+    padding-top: 2rem; 
     display: flex;
     align-items: center;
     justify-content: start;
@@ -269,9 +291,3 @@ img {
     background-color: var(--urgent);
 }
 
-.custom > .categoryButton {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding-top: 0.25rem;
-}
