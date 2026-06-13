@@ -197,6 +197,50 @@ img {
     height: 45px; 
 }
 
+main {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+main > .mainHeading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+
+    font-family: var(--font-header);
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+main > .mainHeading > h3 {
+    font-family: var(--font-body);
+    font-size: 1rem;
+
+    background-color: var(--accent-primary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 50px;
+
+    cursor: pointer;
+}
+
+main > .mainHeading > img {
+    width: 25px;
+    height: 25px;
+
+    cursor: pointer;
+
+    background-color: var(--accent-primary);
+    border-radius: 100px;
+    padding: 0.25rem;
+}
+
 .modal {
     background-color: var(--bg-sidebar);
 

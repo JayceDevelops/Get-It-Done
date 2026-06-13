@@ -137,8 +137,7 @@ const createAddEvent = (container, modal, add) => {
         const category = {
             id: crypto.randomUUID(),
             name: input,
-            image: selectedIcon,
-            task: []
+            image: selectedIcon
         };
 
         CustomCategories.push(category);

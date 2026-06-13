@@ -38,29 +38,6 @@ export const loadCustomCategories = () => {
                 ChangeCategory(category.name);
             });
 
-            buttonDiv.addEventListener('mouseover', () => {
-
-                if (!buttonDiv.classList.contains('current')){
-                    const deleteCategoryDiv = document.createElement('div');
-                    deleteCategoryDiv.classList.add('deleteCategoryDiv');
-
-                    const deleteCategoryButton = document.createElement('img');
-                    deleteCategoryButton.classList.add('deleteCategory');
-                    deleteCategoryButton.src = trash;
-
-                    deleteCategoryDiv.appendChild(deleteCategoryButton);
-                    buttonDiv.appendChild(deleteCategoryDiv);
-                }
-            });
-
-            buttonDiv.addEventListener('mouseout', () => {
-
-                if (!buttonDiv.classList.contains('current')) {
-                    const deleteCategory = document.querySelector('.deleteCategoryDiv');
-                    deleteCategory.remove();
-                }
-            });
-
             custom.appendChild(buttonDiv);
         });
     }
