@@ -291,3 +291,13 @@ img {
     background-color: var(--urgent);
 }
 
+.deleteCategoryDiv {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.deleteCategoryDiv > img {
+    width: 35px;
+    height: 35px;
+}

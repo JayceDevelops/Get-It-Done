@@ -1,4 +1,5 @@
 import { ChangeCategory } from "./change-category";
+import trash from '../assets/trash.svg';
 
 const RemoveShownCategories = () => {
     const shown = document.querySelectorAll('.custom > .categoryButton');
@@ -35,6 +36,29 @@ export const loadCustomCategories = () => {
 
             buttonDiv.addEventListener("click", () => {
                 ChangeCategory(category.name);
+            });
+
+            buttonDiv.addEventListener('mouseover', () => {
+
+                if (!buttonDiv.classList.contains('current')){
+                    const deleteCategoryDiv = document.createElement('div');
+                    deleteCategoryDiv.classList.add('deleteCategoryDiv');
+
+                    const deleteCategoryButton = document.createElement('img');
+                    deleteCategoryButton.classList.add('deleteCategory');
+                    deleteCategoryButton.src = trash;
+
+                    deleteCategoryDiv.appendChild(deleteCategoryButton);
+                    buttonDiv.appendChild(deleteCategoryDiv);
+                }
+            });
+
+            buttonDiv.addEventListener('mouseout', () => {
+
+                if (!buttonDiv.classList.contains('current')) {
+                    const deleteCategory = document.querySelector('.deleteCategoryDiv');
+                    deleteCategory.remove();
+                }
             });
 
             custom.appendChild(buttonDiv);
