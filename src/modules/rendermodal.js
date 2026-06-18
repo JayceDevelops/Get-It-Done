@@ -68,14 +68,31 @@ export const RenderModal = (type) => {
 
         const notUrgent = document.createElement('div');
         notUrgent.classList.add('noturgent');
+
+        notUrgent.addEventListener("click", () => {
+            urgencyLevel = "noturgent";
+        });
+
         urgencyLevels.appendChild(notUrgent);
+
+
 
         const slightUrgent = document.createElement('div');
         slightUrgent.classList.add('slighturgent');
+
+        slightUrgent.addEventListener("click", () => {
+            urgencyLevel = "slighturgent";
+        });
+
         urgencyLevels.appendChild(slightUrgent);
 
         const urgent = document.createElement('div');
         urgent.classList.add('urgent');
+
+        urgent.addEventListener("click", () => {
+            urgencyLevel = "urgent";
+        });
+        
         urgencyLevels.appendChild(urgent);
 
         taskDiv.appendChild(urgencyLevels);
