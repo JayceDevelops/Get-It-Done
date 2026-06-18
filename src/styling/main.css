@@ -356,32 +356,33 @@ main > .tasks > .task > .urgency > .color{
                 0 4px 8px rgba(0, 0, 0, 0.12), 
                 0 16px 32px rgba(0, 0, 0, 0.06);
 
-    display: grid;
-    grid-template-rows: min-content min-content min-content auto;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
 
 }
 
-.modal > h1 {
+.modal > .categorydiv > h1 {
     font-family: var(--font-body);
     font-size: clamp(1.25rem, 4vw, 1.5rem);
     color: var(--text-primary);
     padding: 1rem 0 2rem 1rem;
-    
 }
 
-.modal > div {
+.modal > .categorydiv > div {
     padding-left: 1rem;
     font-family: var(--font-body);
     color: var(--text-primary);
     font-size: clamp(0.25rem, 4vw, 0.55rem);
 }
 
-.modal > div > h2 {
+.modal > .categorydiv > div > h2 {
     font-weight: 400;
     padding-bottom: 0.5rem;
 }
 
-.modal > div > input {
+.modal > .categorydiv > div > input {
     width: 90%;
     padding: 0.5rem;
 
@@ -393,11 +394,11 @@ main > .tasks > .task > .urgency > .color{
     color: var(--text-primary);
 }
 
-.modal > .IconDiv {
+.modal > .categorydiv > .IconDiv {
     padding-top: 2rem;
 }
 
-.modal > .IconDiv > .icon {
+.modal > .categorydiv > .IconDiv > .icon {
     border-radius: 10px;
     padding: 0.15rem;
     border: 2px solid var(--color-border);
@@ -405,11 +406,11 @@ main > .tasks > .task > .urgency > .color{
     cursor: pointer;
 }
 
-.modal > .IconDiv > .home {
+.modal > .categorydiv > .IconDiv > .home {
     margin-left: 0 !important;
 }
 
-.modal > .modalbuttons {
+.modal > .categorydiv > .modalbuttons {
     padding-top: 2rem; 
     display: flex;
     align-items: center;
@@ -417,7 +418,7 @@ main > .tasks > .task > .urgency > .color{
     gap: 2rem;
 }
 
-.modal > .modalbuttons > button {
+.modal > .categorydiv > .modalbuttons > button {
     margin-bottom: 2rem;
     padding: 0.5rem;
 
@@ -431,17 +432,119 @@ main > .tasks > .task > .urgency > .color{
     cursor: pointer;
 }
 
-.modal > .modalbuttons > .cancel {
+.modal > .categorydiv > .modalbuttons > .cancel {
     background-color: var(--urgent);
 }
 
-.deleteCategoryDiv {
+.modal > .taskdiv > h1 {
+    font-family: var(--font-body);
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+    color: var(--text-primary);
+    padding: 1rem 0 1rem 1rem;
+}
+
+.modal > .taskdiv > h2 {
+    padding-left: 1rem;
+    font-family: var(--font-body);
+    color: var(--text-primary);
+    font-size: clamp(0.75rem, 4vw, 1rem);
+    margin-top: 1rem;
+}
+
+.modal > .taskdiv > input#taskName {
+    width: 90%;
+    padding: 0.5rem;
+    margin-left: 1rem;
+
+    border-radius: 8px;
+    border: none;
+    outline: none;
+
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+}
+
+.modal > .taskdiv > select {
+    width: 97%;
+    padding: 0.5rem;
+
+    border-radius: 8px;
+    border: none;
+    outline: none;
+
+    background-color: var(--bg-main);
+
+    font-family: var(--font-body);
+    color: var(--text-primary);
+
+    margin-left: 1rem;
+}
+
+.modal > .taskdiv > input#date {
+    margin-left: 1rem;
+    width: 90%;
+
+    padding: 0.5rem;
+
+    border-radius: 8px;
+    border: none;
+    outline: none;
+
+    font-family: var(--font-body);
+    color: var(--text-primary);
+
+    background-color: var(--bg-main);
+}
+
+.modal > .taskdiv > .urgency {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.modal > .taskdiv > .urgency > div {
+    width: 2rem;
+    height: 2rem;
+
+    border-radius: 100px;
+    background-color: var(--accent-primary);
+
+    cursor: pointer;
+}
+
+.modal > .taskdiv > .urgency > .slighturgent {
+    background-color: var(--slight-urgent);
+}
+
+.modal > .taskdiv > .urgency > .urgent {
+    background-color: var(--urgent);
+}
+
+.modal > .taskdiv > .taskbuttons {
+    margin-left: 1rem;
+    padding-top: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: start;
+    gap: 2rem;
 }
 
-.deleteCategoryDiv > img {
-    width: 35px;
-    height: 35px;
+.modal > .taskdiv > .taskbuttons > button {
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+
+    border: none;
+    border-radius: 100px;
+
+    font-family: var(--font-body);
+    font-weight: 700;
+    color: var(--text-primary);
+    background-color: var(--accent-primary);
+    cursor: pointer;
+}
+
+.modal > .taskdiv > .taskbuttons > .canceltask {
+    background-color: var(--urgent);
 }
