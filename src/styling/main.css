@@ -88,6 +88,8 @@ nav > .new {
     outline: none;
 
     background-color: var(--accent-primary);
+
+    cursor: pointer;
 }
 
 
@@ -153,6 +155,11 @@ nav > .new {
     padding: 0.15rem 0.5rem 0.15rem 0.5rem;
 
     border-radius: 50px;
+}
+
+nav > .custom {
+    overflow: scroll;
+    scrollbar-width: none;
 }
 
 nav > .custom > .customHeader {
@@ -321,6 +328,20 @@ main > .tasks > .task > .urgency > .color{
     border-radius: 100px;
     margin-right: 1rem;
 
+}
+
+.modalbackground {
+    width: 100%;
+    height: 100vh;
+
+    position: absolute;
+
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal {

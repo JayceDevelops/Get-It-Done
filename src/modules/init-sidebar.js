@@ -6,6 +6,7 @@ import Someday from '../assets/Someday.svg';
 import { loadCustomCategories } from './load-custom-category';
 import { ChangeCategory } from "../modules/change-category";
 import { AddCustomCategory } from "../modules/add-custom-category";
+import { AddNewTask } from "../modules/add-new-task";
 
 
 export const InitSidebar = () => {
@@ -17,7 +18,14 @@ export const InitSidebar = () => {
     const newTask = document.createElement('button');
     newTask.classList.add('new');
     newTask.textContent = '+ New Task';
+
+    newTask.addEventListener("click", () => {
+        AddNewTask();
+    });
+    
     nav.appendChild(newTask);
+
+    
 
     // Render Preset Categories
     renderPresetCategories(nav);
