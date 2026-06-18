@@ -15,14 +15,38 @@ export const RenderModal = (type) => {
     const modal = document.createElement('div');
     modal.classList.add('modal');
 
-    if (type === "task"){
+    const modalHeading = document.createElement('h1');
+    const container = document.querySelector('.container');
 
+    const body = document.querySelector('body');
+
+    if (type === "task"){
+        modalHeading.textContent = 'Add New Task';
+        modal.appendChild(modalHeading);
+
+        const listheading = document.createElement('h2');
+        listheading.textContent = "List";
+        modal.appendChild(listheading);
+
+        const categories = getListOfCategories();
+        const dropdown = document.createElement('select');
+        modal.appendChild(dropdown);
+
+        categories.forEach((category) => {
+            const option = document.createElement('option');
+            option.textContent = category;
+            option.value = category;
+            dropdown.appendChild(option);
+        });
+
+        modal.appendChild(dropdown);
+
+        modalBackground.appendChild(modal);
+        body.insertBefore(modalBackground, container);
     }
     else {
-        const container = document.querySelector('.container');
 
         // Heading
-        const modalHeading = document.createElement('h1');
         modalHeading.textContent = 'Create New Category';
         modal.appendChild(modalHeading);
 
@@ -111,13 +135,11 @@ export const RenderModal = (type) => {
         createAddEvent(modalBackground, modal, addButton);
 
         modalBackground.appendChild(modal);
-
-        const body = document.querySelector('body');
-
         body.insertBefore(modalBackground, container);
 
         updateImageSelectedBorder();
     };
+
 };
 
 const unFocusBackground = (container) => {
@@ -188,3 +210,19 @@ const updateImageSelectedBorder = () => {
     newIcon.style.borderColor = 'var(--accent-primary)';
     newIcon.classList.add('selected');
 };
+
+const getListOfCategories = () => {
+    let lists = ['Anytime', 'Someday'];
+
+    let CustomCategories = localStorage.getItem('Custom');
+
+    if (CustomCategories !== null){
+        CustomCategories = JSON.parse(CustomCategories);
+
+        CustomCategories.forEach(category => {
+            lists.push(category.name);
+        });
+    }
+    
+    return lists;
+}

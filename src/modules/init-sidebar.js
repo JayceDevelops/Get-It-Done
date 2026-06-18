@@ -6,7 +6,7 @@ import Someday from '../assets/Someday.svg';
 import { loadCustomCategories } from './load-custom-category';
 import { ChangeCategory } from "../modules/change-category";
 import { AddCustomCategory } from "../modules/add-custom-category";
-import { AddNewTask } from "../modules/add-new-task";
+import { RenderModal } from '../modules/rendermodal';
 
 
 export const InitSidebar = () => {
@@ -20,7 +20,7 @@ export const InitSidebar = () => {
     newTask.textContent = '+ New Task';
 
     newTask.addEventListener("click", () => {
-        AddNewTask();
+        RenderModal("task");
     });
     
     nav.appendChild(newTask);
