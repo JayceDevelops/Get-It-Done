@@ -8,9 +8,6 @@ export const InitMain = (category='') => {
     let filteredTasks = [];
 
     const today = new Date().toISOString();
-    const tommorow = new Date(today);
-    tommorow.setDate(today.getDate() + 1);
-    tommorow = tommorow.toISOString();
 
     if (tasks !== null){
         if (category !== ''){
@@ -25,12 +22,6 @@ export const InitMain = (category='') => {
                 loadTasks(filteredTasks, category);
             }
             else {
-                tasks.forEach(task => {
-                    if (tommorow.slice(0, 10) === task.duedate.toString().slice(0, 10)){
-                        filteredTasks.push(task);
-                    }
-                });
-
                 loadTasks(filteredTasks, category);
                 UpdateCategoryHeading("Upcoming");
             }   
@@ -88,7 +79,7 @@ const loadTasks = (filTasks, category) => {
                     localStorage.setItem('Tasks', tasks);
                     InitMain(category);
                     
-                }, 2000);
+                }, 500);
             });
 
             const taskCategory = document.createElement('h2');
