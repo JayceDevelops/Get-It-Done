@@ -119,7 +119,7 @@ const renderPresetCategories = (nav) => {
             buttonImage.src = Upcoming;
 
             presetButton.addEventListener("click", () => {
-                //InitMain("Upcoming");
+                InitMain("Upcoming");
                 UpdateCategoryHeading("Upcoming");
             });
         }

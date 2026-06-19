@@ -7,21 +7,37 @@ export const InitMain = (category='') => {
 
     let filteredTasks = [];
 
+    const today = new Date().toISOString();
+    const tommorow = new Date(today);
+    tommorow.setDate(today.getDate() + 1);
+    tommorow = tommorow.toISOString();
+
     if (tasks !== null){
         if (category !== ''){
 
-            tasks.forEach(task => {
-                if (task.category === category){
-                    filteredTasks.push(task);
-                }
-            });
+            if (category !== "Upcoming"){
+                tasks.forEach(task => {
+                    if (task.category === category){
+                        filteredTasks.push(task);
+                    }
+                });
 
-            loadTasks(filteredTasks, category);
+                loadTasks(filteredTasks, category);
+            }
+            else {
+                tasks.forEach(task => {
+                    if (tommorow.slice(0, 10) === task.duedate.toString().slice(0, 10)){
+                        filteredTasks.push(task);
+                    }
+                });
+
+                loadTasks(filteredTasks, category);
+                UpdateCategoryHeading("Upcoming");
+            }   
         }
         else {
-            const today = new Date().toISOString();
+            
             tasks.forEach(task => {
-
                 if (today.slice(0, 10) === task.duedate.toString().slice(0, 10)){
                     filteredTasks.push(task);
                 }
