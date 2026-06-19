@@ -7,6 +7,8 @@ import { loadCustomCategories } from './load-custom-category';
 import { ChangeCategory } from "../modules/change-category";
 import { AddCustomCategory } from "../modules/add-custom-category";
 import { RenderModal } from '../modules/rendermodal';
+import { InitMain } from './init-main';
+import { UpdateCategoryHeading } from './update-category-heading';
 
 
 export const InitSidebar = () => {
@@ -107,15 +109,34 @@ const renderPresetCategories = (nav) => {
             active.innerHTML = '<h1>Current</h1>';
 
             presetButton.appendChild(active);
+
+            presetButton.addEventListener("click", () => {
+                InitMain();
+                UpdateCategoryHeading("Today");
+            });
         }
         else if (category === 'Upcoming'){
             buttonImage.src = Upcoming;
+
+            presetButton.addEventListener("click", () => {
+                UpdateCategoryHeading("Upcoming");
+            });
         }
         else if (category === 'Anytime'){
             buttonImage.src = Anytime;
+
+            presetButton.addEventListener("click", () => {
+                InitMain("Anytime");
+                UpdateCategoryHeading("Anytime");
+            });
         }
         else {
             buttonImage.src = Someday;
+
+            presetButton.addEventListener("click", () => {
+                InitMain("Someday");
+                UpdateCategoryHeading("Someday");
+            });
         }
 
         name.insertBefore(buttonImage, nameText);

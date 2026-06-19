@@ -4,6 +4,7 @@ import WeightsIcon from "../assets/weights.svg";
 import VacationIcon from "../assets/vacation.svg";
 
 import { InitSidebar } from "./init-sidebar";
+import { InitMain } from "./init-main";
 
 let selectedIcon = HomeIcon;
 
@@ -292,6 +293,8 @@ const createAddEvent = (container, modal, add, type) => {
 
             focusBackground(container);
             modal.remove();
+
+            InitMain();
         });
     };
 };

@@ -1,5 +1,7 @@
 import { ChangeCategory } from "./change-category";
 import trash from '../assets/trash.svg';
+import { InitMain } from "./init-main";
+import { UpdateCategoryHeading } from "./update-category-heading";
 
 const RemoveShownCategories = () => {
     const shown = document.querySelectorAll('.custom > .categoryButton');
@@ -36,6 +38,11 @@ export const loadCustomCategories = () => {
 
             buttonDiv.addEventListener("click", () => {
                 ChangeCategory(category.name);
+                UpdateCategoryHeading(category.name);
+            }); 
+
+            buttonDiv.addEventListener("click", () => {
+                InitMain(category.name);
             });
 
             custom.appendChild(buttonDiv);
