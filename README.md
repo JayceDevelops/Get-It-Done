@@ -17,7 +17,7 @@ Users can build their own custom workflow directories (such as *Work*, *Vacation
 
 | 🏖️ Vacation Category View | 🧹 Chores Category View |
 |---|---|
-<img width="1271" height="739" alt="image" src="https://github.com/user-attachments/assets/c1c98c74-6bdc-44cd-a794-01ad12be4e2e" />
+<img width="1279" height="740" alt="image" src="https://github.com/user-attachments/assets/5793b7d0-b2cf-465b-9e52-a945a22143fb" />
 <img width="1274" height="740" alt="image" src="https://github.com/user-attachments/assets/7f061e46-963a-4336-ae11-e89d1aad8922" />
 
 ### 🛠️ Modals & Input Validation Matrices
