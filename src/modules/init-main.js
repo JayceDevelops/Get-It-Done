@@ -15,7 +15,7 @@ export const InitMain = (category='') => {
                 }
             });
 
-            loadTasks(filteredTasks);
+            loadTasks(filteredTasks, category);
         }
         else {
             const today = new Date().toISOString();
@@ -26,7 +26,7 @@ export const InitMain = (category='') => {
                 }
             });
 
-            loadTasks(filteredTasks);
+            loadTasks(filteredTasks, category);
             UpdateCategoryHeading("Today");
         }
     }
@@ -36,7 +36,7 @@ export const InitMain = (category='') => {
     }
 };
 
-const loadTasks = (filTasks) => {
+const loadTasks = (filTasks, category) => {
 
     const tasksHolder = document.querySelector('.tasks');
     tasksHolder.replaceChildren();
@@ -61,7 +61,14 @@ const loadTasks = (filTasks) => {
             content.appendChild(taskHeading);
 
             const taskCategory = document.createElement('h2');
-            taskCategory.textContent = '(' + task.category + ')';
+
+            if (category === ''){
+                taskCategory.textContent = '(' + task.category + ')';
+            }
+            else {
+                taskCategory.textContent = '';
+            }
+            
             content.appendChild(taskCategory);
 
             taskDiv.appendChild(content);

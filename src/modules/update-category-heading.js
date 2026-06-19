@@ -5,10 +5,12 @@ export const UpdateCategoryHeading = (category) => {
     const MainHeading = document.querySelector(".mainHeading");
     if (category !== "Today" && category !== "Upcoming" && category !== "Someday" && category !== "Anytime"){
         
-        const Edit = document.createElement('h3');
-        Edit.textContent = "Edit";
+        if (!MainHeading.innerHTML.includes('<h3')){
+            const Edit = document.createElement('h3');
+            Edit.textContent = "Edit";
 
-        MainHeading.appendChild(Edit);
+            MainHeading.appendChild(Edit);
+        }
     }
     else {
         if (MainHeading.innerHTML.includes('<h3')){
