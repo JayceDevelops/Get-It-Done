@@ -227,17 +227,6 @@ main > .mainHeading {
     color: var(--text-primary);
 }
 
-main > .mainHeading > h3 {
-    font-family: var(--font-body);
-    font-size: 1rem;
-
-    background-color: var(--accent-primary);
-    padding: 0.25rem 0.5rem;
-    border-radius: 50px;
-
-    cursor: pointer;
-}
-
 main > .tasks {
     margin-top: 1rem;
     padding: 0.5rem 0 0.5rem 0.25rem;
