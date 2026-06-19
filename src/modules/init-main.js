@@ -4,6 +4,7 @@ export const InitMain = (category='') => {
 
     let tasks = localStorage.getItem('Tasks');
     tasks = JSON.parse(tasks);
+
     let filteredTasks = [];
 
     if (tasks !== null){
@@ -37,6 +38,8 @@ export const InitMain = (category='') => {
 };
 
 const loadTasks = (filTasks, category) => {
+    let tasks = localStorage.getItem('Tasks');
+    tasks = JSON.parse(tasks);
 
     const tasksHolder = document.querySelector('.tasks');
     tasksHolder.replaceChildren();
@@ -54,11 +57,23 @@ const loadTasks = (filTasks, category) => {
             checkbox.type = "checkbox";
             checkbox.name = task.id;
             checkbox.value = task.name;
+
             content.appendChild(checkbox);
 
             const taskHeading = document.createElement('h1');
             taskHeading.textContent = task.name;
             content.appendChild(taskHeading);
+
+            checkbox.addEventListener("click", () => {
+                taskHeading.style.textDecoration = "line-through";
+                setTimeout(function(){
+                    tasks = tasks.filter(item => item.id !== task.id);
+                    tasks = JSON.stringify(tasks);
+                    localStorage.setItem('Tasks', tasks);
+                    InitMain(category);
+                    
+                }, 2000);
+            });
 
             const taskCategory = document.createElement('h2');
 
@@ -99,6 +114,8 @@ const loadTasks = (filTasks, category) => {
     else {
         const noTasks = document.createElement('h2');
         noTasks.textContent = "Nothing to see here...";
+
+        const tasksDiv = document.querySelector('.tasks');
         tasksDiv.appendChild(noTasks);
     }
 };
