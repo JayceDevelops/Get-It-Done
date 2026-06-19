@@ -1,4 +1,4 @@
-# 📑 Get It Done — Task Management Dashboard
+# 📑 Get It Done — Task Management Website
 
 A modern, highly functional task management web utility designed for fluid organization and smart task segregation. Built from scratch using semantic HTML5, custom CSS3 variable layouts, and modular vanilla JavaScript, this application implements strict client-side data architecture to handle customizable project lists and state management seamlessly.
 
